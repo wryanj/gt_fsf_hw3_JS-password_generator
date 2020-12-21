@@ -1,9 +1,11 @@
+/*Global Style Attributes*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/*Style CSS By Elemenet Type, Class and ID*/
 html,
 body,
 .wrapper {
@@ -118,6 +120,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/*Media Queries For Custom Build Responsiveness*/
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
