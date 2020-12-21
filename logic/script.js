@@ -23,7 +23,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
       //Define local Variables To Be Defined Via User Inputs & used for password generation:
       var passwordLength;
-      var specialCharacters;
+      var specialCharactersNumber;
 
       //Define (and validate) user password criteria via prompts
 
@@ -36,7 +36,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
             var passwordLength = prompt("How many characters do you want your password to be? (A numerical value between 8-128 must be submitted)");
 
             //log the numerical value captured for the variable for purpose of testing code
-            console.log("Number of charcters set for item = " + passwordLength);
+            console.log("Total number of characters (length) user wants in their password = " + passwordLength);
 
             //if the passowrd criteria is not met, present and error message. 
             if (passwordLength < 8 || passwordLength > 123) {
@@ -59,28 +59,41 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
           do{
 
             //Ask the user to enter the desired number of special characters and present them with the constraint
-            var specialCharacters = prompt("How many special characters do you want in your password? (A numerica value between 1 and " + [passwordLength-4] + " must be selected");
+            var specialCharactersNumber = prompt("How many special characters do you want in your password? (A numerica value between 1 and " + [passwordLength-4] + " must be selected");
 
-            //Log the entry of
-            console.log("Number of special charcters set for item = " + specialCharacters);
+            //Log the entry of special characters the user wants
+            console.log("Number of special charcters user wants in their password = " + specialCharactersNumber);
 
             //If criteria is not met, alert them that there was an error and present the error message
-            if (specialCharacters > [passwordLength-4] || specialCharacters<1) {
-              alert ("ERROR: You have not met the required entry criteria");
+            if (specialCharactersNumber > [passwordLength-4] || specialCharactersNumber<1) {
+              alert ("ERROR: You have not met the required entry criteria. Hit ok to try again, and please follow the required entry criteria.");
             }
             
             // If criteria is met, alert them of the number they chose and proceed to generate a password for them (breaks the while loop)
-            else if (specialCharacters < [passwordLength-4] && specialCharacters>1) {
-              alert ("You have choosen " + specialCharacters + " special characters to use in your password")
+            else if (specialCharactersNumber < [passwordLength-4] && specialCharactersNumber>1) {
+              alert ("You have choosen " + specialCharactersNumber + " special characters to use in your password")
             }
           }
 
            //If the prompted entry is valid, continue to next code. If its not (e.x if condition in while is present) loop through code again until a valid answer is provided
-           while (specialCharacters > [passwordLength-4] || specialCharacters<1);       
-                
-    }
+           while (specialCharactersNumber > [passwordLength-4] || specialCharactersNumber<1);    
 
+    } 
+    
+      
       // Generate a Password based on the user inputted criteria....(NEED TO EXTEND FUNCTION CURLY BRACE FROM WRITE PASSWORD THOUGH WHEN THIS IS DONE)
-        //---Enter Code--//
+      //function createPassword (passwordLength) {
 
- 
+        //Define additional variables to be used
+        //var result;
+        //var UpperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWWYZ"
+        //var LowerCaseCharacters =  "abcdefghijklmnopqrstuvwxyz"
+        //var
+
+     
+
+
+   
+
+
+      
