@@ -78,17 +78,39 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
            //If the prompted entry is valid, continue to next code. If its not (e.x if condition in while is present) loop through code again until a valid answer is provided
            while (specialCharactersNumber > [passwordLength-4] || specialCharactersNumber<1);    
 
+           //Console log final accepted password criteria inputted by users
+           console.log ("Total Characters: " + passwordLength + " , Final number of Special Characters: " + specialCharactersNumber)
+
     } 
     
       
       // Generate a Password based on the user inputted criteria....(NEED TO EXTEND FUNCTION CURLY BRACE FROM WRITE PASSWORD THOUGH WHEN THIS IS DONE)
-      //function createPassword (passwordLength) {
+      //function createPassword (passwordLength) { 
 
-        //Define additional variables to be used
-        //var result;
-        //var UpperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWWYZ"
-        //var LowerCaseCharacters =  "abcdefghijklmnopqrstuvwxyz"
-        //var
+        //Define additional variables to be defined
+        //var RandomPassword; //This is what we want to generate for them
+        //var UseUpperCaseCharacters;
+        //var UseLowerCaseCharacters;
+        //var UseSpecialCaseCharacters
+
+        //Define additional variables to be referenced
+        //var RefUpperCaseCharacters = ["A,B,C,D,EF,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,W,Y,Z,"] // Review if this is the right way to list an array
+        //var RefLowerCaseCharacters =  "abcdefghijklmnopqrstuvwxyz"
+        //var RefSpecialCaseCharacters = "!@#$%^&*"
+
+        //Pick some random upper case letters to use in the random password based on user entry on how many they wanted
+
+        //Pick some random lower case letters to use in the random password based on user entry on how many they wanted
+
+        //Pick some random lower case letters to use in the random password based on user entry on how many they wanted
+
+        //Combine the newly defined variables above into a single string
+
+        //Scramble the order of characters randomly within that single string and set it equal to the password
+
+        //Display the password using document.getelemenetbyid.innerhtml within the display area of the viewport
+
+      //}       
 
      
 
