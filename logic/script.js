@@ -18,15 +18,15 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
 //My Logic Script
 
-  //Upcon call via an OnClick Event Added To the Button elemenet...run the writePassword function
+  //writePassword Function To Be Initiated on Call Via Onclick Attribute in HTML Button "Generate Password"
     function writePassword() {
 
-      //Define the desired lenght of the random password. Variable to be defined:
-      var passwordLength;
-
-      //Define (and validate) user password criteria via prompts
+      //Define (and validate) user password criteria via prompts and Confirmations
 
         //Get and Validate their PW Lenght Preference
+
+          // Variable to be defined:
+          var passwordLength;
 
           //Run the code block at least once to prompt for vairable, and validate if it meets the needed criteria
           do{
@@ -39,20 +39,22 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
             //if the passowrd criteria is not met, present and error message. 
             if (passwordLength < 8 || passwordLength > 123) {
-            alert("ERROR: You have not met the required entry criteria. Hit ok to try again, and please follow the required entry criteria.");
+            alert("ERROR: You have not met the required entry criteria.\n\nHit ok to try again, and please follow the required entry criteria.");
             }
-    
+      
             //If criteria is met, alert them of the number they chose and send them to the next prompt for special characters (breaks while loop)
             else if (passwordLength > 8 && passwordLength <123) {
             alert ("You have choosen a password length of " + passwordLength + " characters");
             }
           }
 
-           //If the prompted entry is valid, continue to next code. If its not (e.x if the condition in while is present) loop through the code again until a valid answer is provided
-           while (passwordLength < 8 || passwordLength > 123);
+          //If the prompted entry is valid, continue to next code. If its not (e.x if the condition in while is present) loop through the code again until a valid answer is provided
+          while (passwordLength < 8 || passwordLength > 123);
 
 
-        // Determine which character types should be included in the password. Variables to be defined:
+        // Get and Validate What Character Types Shold be Included
+        
+          //Variable to Be Defined
           var includeUpperCase;
           var includeLowerCase;
           var includeNumbers;
@@ -60,9 +62,8 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
           //Run the code block at least once to prompt for variable, and validate if it meets criteria
           do{
-
             //Notify the user what they must include in their password
-            alert("You will be asked to confirm which character types you wish to include in your password. You must choose to include at least one character type!")
+            alert("You will be asked to confirm which character types you wish to include in your password.\n\nYou must choose to include at least one character type!")
 
             //Ask the user if they want to include certain character types in their password
             var includeUpperCase = confirm("Do you want to include upper case characters in your password?");
@@ -78,21 +79,20 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
               console.log("Include Special Characters? = " + includeSpecialCharacters);
             
             //If they chose at least one type, summarize thier selectoin and proceed to generate the password for them based on their criteria
-            if ((includeUpperCase=true) || (includeLowerCase=true) || (includeNumbers=true) || (includeSpecialCharacters=true)) {
-              alert("Your selections are: Include Upper Case? = " + includeUpperCase + " Include Lower Case? = " + includeLowerCase + " Include Numbers? = " + includeNumbers + " Include Special Characters? = " + includeSpecialCharacters)
+            if ((includeUpperCase===true) || (includeLowerCase===true) || (includeNumbers===true) || (includeSpecialCharacters===true)) {
+              alert("Your final selections are:\n\nNumber of Characters to Include in Password? = " + passwordLength + "\nInclude Upper Case? = " + includeUpperCase + "\nInclude Lower Case? = " + includeLowerCase + "\nInclude Numbers? = " + includeNumbers + "\nInclude Special Characters? = " + includeSpecialCharacters)
             }
 
-            else if ((includeUpperCase=false) && (includeLowerCase=false) && (includeNumbers=false) && (includeSpecialCharacters=false)){
+            else if ((includeUpperCase===false) && (includeLowerCase===false) && (includeNumbers===false) && (includeSpecialCharacters===false)){
               alert("You did not choose at least character type to choose in your password. Click OK to try again, and please select at least one character type")
             }
-          }
+          } 
 
-           //If user has not selected at least one character type (aka the condition below), re-ask them the questions until they select at least one
-           while ((includeUpperCase=false) && (includeLowerCase=false) && (includeNumbers=false) && (includeSpecialCharacters=false));   
+          //If no character types are selected (condition stated below) re run the prompt loop for character types
+          while ((includeUpperCase==false) && (includeLowerCase==false) && (includeNumbers==false) && (includeSpecialCharacters==false));
 
-    } 
+    }   
     
-      
       // Generate a Password based on the user inputted criteria....(NEED TO EXTEND FUNCTION CURLY BRACE FROM WRITE PASSWORD THOUGH WHEN THIS IS DONE)
       //function createPassword (passwordLength) { 
 
