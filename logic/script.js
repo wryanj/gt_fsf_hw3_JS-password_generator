@@ -21,9 +21,8 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
   //Upcon call via an OnClick Event Added To the Button elemenet...run the writePassword function
     function writePassword() {
 
-      //Define local Variables To Be Defined Via User Inputs & used for password generation:
+      //Define the desired lenght of the random password. Variable to be defined:
       var passwordLength;
-      var specialCharactersNumber;
 
       //Define (and validate) user password criteria via prompts
 
@@ -53,33 +52,43 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
            while (passwordLength < 8 || passwordLength > 123);
 
 
-        // Get and Validate Their Desired Number of Special Characters
+        // Determine which character types should be included in the password. Variables to be defined:
+          var includeUpperCase;
+          var includeLowerCase;
+          var includeNumbers;
+          var includeSpecialCharacters;
 
           //Run the code block at least once to prompt for variable, and validate if it meets criteria
           do{
 
-            //Ask the user to enter the desired number of special characters and present them with the constraint
-            var specialCharactersNumber = prompt("How many special characters do you want in your password? (A numerica value between 1 and " + [passwordLength-4] + " must be selected");
+            //Notify the user what they must include in their password
+            alert("You will be asked to confirm which character types you wish to include in your password. You must choose to include at least one character type!")
 
-            //Log the entry of special characters the user wants
-            console.log("Number of special charcters user wants in their password = " + specialCharactersNumber);
+            //Ask the user if they want to include certain character types in their password
+            var includeUpperCase = confirm("Do you want to include upper case characters in your password?");
+              console.log("Include Upper Case Characters? = " + includeUpperCase);
 
-            //If criteria is not met, alert them that there was an error and present the error message
-            if (specialCharactersNumber > [passwordLength-4] || specialCharactersNumber<1) {
-              alert ("ERROR: You have not met the required entry criteria. Hit ok to try again, and please follow the required entry criteria.");
-            }
+            var includeLowerCase = confirm("Do you want to include lower case characters in your password?");
+              console.log("Include Lower Case Characters? = " + includeLowerCase);
+
+            var includeNumbers = confirm("Do you want to include numbers in your password?");
+              console.log("Include Numbers? = " + includeNumbers);
+
+            var includeSpecialCharacters = confirm("Do you want to include special characters in your password?");
+              console.log("Include Special Characters? = " + includeSpecialCharacters);
             
-            // If criteria is met, alert them of the number they chose and proceed to generate a password for them (breaks the while loop)
-            else if (specialCharactersNumber < [passwordLength-4] && specialCharactersNumber>1) {
-              alert ("You have choosen " + specialCharactersNumber + " special characters to use in your password")
+            //If they chose at least one type, summarize thier selectoin and proceed to generate the password for them based on their criteria
+            if ((includeUpperCase=true) || (includeLowerCase=true) || (includeNumbers=true) || (includeSpecialCharacters=true)) {
+              alert("Your selections are: Include Upper Case? = " + includeUpperCase + " Include Lower Case? = " + includeLowerCase + " Include Numbers? = " + includeNumbers + " Include Special Characters? = " + includeSpecialCharacters)
+            }
+
+            else if ((includeUpperCase=false) && (includeLowerCase=false) && (includeNumbers=false) && (includeSpecialCharacters=false)){
+              alert("You did not choose at least character type to choose in your password. Click OK to try again, and please select at least one character type")
             }
           }
 
-           //If the prompted entry is valid, continue to next code. If its not (e.x if condition in while is present) loop through code again until a valid answer is provided
-           while (specialCharactersNumber > [passwordLength-4] || specialCharactersNumber<1);    
-
-           //Console log final accepted password criteria inputted by users
-           console.log ("Total Characters: " + passwordLength + " , Final number of Special Characters: " + specialCharactersNumber)
+           //If user has not selected at least one character type (aka the condition below), re-ask them the questions until they select at least one
+           while ((includeUpperCase=false) && (includeLowerCase=false) && (includeNumbers=false) && (includeSpecialCharacters=false));   
 
     } 
     
