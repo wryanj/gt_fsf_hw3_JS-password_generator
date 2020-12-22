@@ -19,7 +19,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 //My Logic Script
 
   //writePassword Function To Be Initiated on Call Via Onclick Attribute in HTML Button "Generate Password"
-    function writePassword() {
+    function generateRandomPassword() {
 
       //Define (and validate) user password criteria via prompts and Confirmations
 
@@ -50,7 +50,6 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
           //If the prompted entry is valid, continue to next code. If its not (e.x if the condition in while is present) loop through the code again until a valid answer is provided
           while (passwordLength < 8 || passwordLength > 123);
-
 
         // Get and Validate What Character Types Shold be Included
         
@@ -91,35 +90,27 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
           //If no character types are selected (condition stated below) re run the prompt loop for character types
           while (includeUpperCase===false && includeLowerCase===false && includeNumbers===false && includeSpecialCharacters===false)
 
-    }   
     
-      // Generate a Password based on the user inputted criteria....(NEED TO EXTEND FUNCTION CURLY BRACE FROM WRITE PASSWORD THOUGH WHEN THIS IS DONE)
-      //function createPassword (passwordLength) { 
-
         //Define additional variables to be defined
-        //var RandomPassword; //This is what we want to generate for them
-        //var UseUpperCaseCharacters;
-        //var UseLowerCaseCharacters;
-        //var UseSpecialCaseCharacters
+        //var unscrambledCharacters;
+        //var userRandomPassword; 
 
         //Define additional variables to be referenced
-        //var RefUpperCaseCharacters = ["A,B,C,D,EF,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,W,Y,Z,"] // Review if this is the right way to list an array
-        //var RefLowerCaseCharacters =  "abcdefghijklmnopqrstuvwxyz"
-        //var RefSpecialCaseCharacters = "!@#$%^&*"
+        //var upperCaseArray = ["A,B,C,D,EF,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,W,Y,Z,"] // Review if this is the right way to list an array or if each is in quotes?
+        //var lowerCaseArray =  ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"]
+        //var numberArray = [0,1,2,3,4,5,6,7,8,9]
+        //var specialCharacterArray = ["!,@,#,$,%,^,&,*"]
 
-        //Pick some random upper case letters to use in the random password based on user entry on how many they wanted
+        //Figure out logic to loop through array types to pick characters via array index UNLESS a value is false...(randomize whihc array type they choose from so its not the same cycle?)
 
-        //Pick some random lower case letters to use in the random password based on user entry on how many they wanted
+        //Join the indexed array values as a single string as var unscrambledCharacters....
 
-        //Pick some random lower case letters to use in the random password based on user entry on how many they wanted
+        //Scramble the order of the characters to create final password var userRandomPassword....
 
-        //Combine the newly defined variables above into a single string
+        //Display the Password to the User
 
-        //Scramble the order of characters randomly within that single string and set it equal to the password
-
-        //Display the password using document.getelemenetbyid.innerhtml within the display area of the viewport
-
-      //}       
+      //}  
+   }     
 
      
 
