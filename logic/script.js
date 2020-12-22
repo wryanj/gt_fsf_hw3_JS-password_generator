@@ -89,7 +89,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
           } 
 
           //If no character types are selected (condition stated below) re run the prompt loop for character types
-          while ((includeUpperCase==false) && (includeLowerCase==false) && (includeNumbers==false) && (includeSpecialCharacters==false));
+          while (includeUpperCase===false && includeLowerCase===false && includeNumbers===false && includeSpecialCharacters===false)
 
     }   
     
