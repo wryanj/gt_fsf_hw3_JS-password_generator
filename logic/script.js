@@ -98,44 +98,44 @@
         var lowerCaseCharacters;
         var numberCharacters;
         var specialCharacters;
-        var unscrambledCharacters;
+        var unscrambledCharacters=[];
         var userRandomPassword; 
 
-        //For all arrays until i is equal to the pw length, Loop Through and Index values from the reference arrays based on user input
+        //For all arrays until i is equal to the pw length, Loop Through and Index values from the ref arrays and add them to the unscrambled characters array
         for (i=0; i<passwordLength; i++) {
 
           //If includeUpperCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the upperCaseReference to create new array upperCaseCharacters
           if (includeUpperCase === true) {
             var upperCaseCharacters = upperCaseReference[Math.floor(Math.random()*26)];
+            unscrambledCharacters.push(upperCaseCharacters);
           }
 
           //If includeLowerCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the lowerCaseReference to create new array lowerCaseCharacters
           if (includeLowerCase === true) {
             var lowerCaseCharacters = lowerCaseReference[Math.floor(Math.random()*26)];
+            unscrambledCharacters.push(lowerCaseCharacters);
           }
 
           //If includeNumbers is true, index a random value 0-9 (for 10 numbers including 0) from the numbersReference to create new array numbersCharacters
           if (includeNumbers === true) {
             var numberCharacters = numberReference[Math.floor(Math.random()*10)];
+            unscrambledCharacters.push(numberCharacters);
           }
           
           //If includeSpecialCharacters is true, index a random value 0-7 (for 8 special characters) from the specialCharactersArray
           if (includeSpecialCharacters === true) {
             var specialCharacters = specialCharacterReference[Math.floor(Math.random()*8)];
+            unscrambledCharacters.push(specialCharacters);
           }
         }         
-           
-            console.log("upper case characters = " + upperCaseCharacters);
-            console.log("lower case characters = " + lowerCaseCharacters);
-            console.log("number characters = " + numberCharacters);
-            console.log("special characters = " + specialCharacters);
 
 
-        //Join the new arrays created in the for loop into a single array unscrambledCharacters
-        unscrambledCharacters = upperCaseCharacters.concat(lowerCaseCharacters,numberCharacters,specialCharacters);
-          console.log("unscrambled characters = " + unscrambledCharacters);
+        //Check the value of unscrambled chracters appended (pushed) to the array from the foor loop
+        console.log("unscrambled characters = " + unscrambledCharacters);
 
-        //Scramble the order of the characters to create final password var userRandomPassword as var userRandomPassword
+        // Remove all instances of undefined from unscrambledCharacters
+        
+        //Scramble the order of the characters (with undefined removed) to create final password var userRandomPassword as var userRandomPassword
 
       //Display the result of userRandomPassword by changing innerhtml of card body text area element of html file
 
