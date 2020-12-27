@@ -89,13 +89,19 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
               alert("Your final selections are:\n\nNumber of Characters to Include in Password? = " + passwordLength + "\nInclude Upper Case? = " + includeUpperCase + "\nInclude Lower Case? = " + includeLowerCase + "\nInclude Numbers? = " + includeNumbers + "\nInclude Special Characters? = " + includeSpecialCharacters)
             }
 
+            //if they dont choose at least one true value, ask them if they want ot try again. If not, return them to start
             else if ((includeUpperCase===false) && (includeLowerCase===false) && (includeNumbers===false) && (includeSpecialCharacters===false)){
-              alert("You did not choose at least character type to choose in your password. Click OK to try again, and please select at least one character type")
+              var confirmContinue = confirm ("You did not choose at least character type to choose in your password. \n\nClick OK to try again, or cancel if you want to stop the password generation process")
+              console.log("confirmContinue = " + confirmContinue);
+              if (confirmContinue === false) {
+                return;
+              }
+              
             }
           } 
 
           //If no character types are selected (condition stated below) re run the prompt loop for character types
-          while (includeUpperCase===false && includeLowerCase===false && includeNumbers===false && includeSpecialCharacters===false)
+          while (includeUpperCase===false && includeLowerCase===false && includeNumbers===false && includeSpecialCharacters===false && confirmContinue === true)
 
 
         //Define additional variables to be defined
