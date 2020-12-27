@@ -91,7 +91,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
             //if they dont choose at least one true value, ask them if they want ot try again. If not, return them to start
             else if ((includeUpperCase===false) && (includeLowerCase===false) && (includeNumbers===false) && (includeSpecialCharacters===false)){
-              var confirmContinue = confirm ("You did not choose at least character type to choose in your password. \n\nClick OK to try again, or cancel if you want to stop the password generation process")
+              var confirmContinue = confirm ("You did not choose at least one character type to use in your password. \n\nClick OK to try again, or cancel if you want to stop the password generation process")
               console.log("confirmContinue = " + confirmContinue);
               if (confirmContinue === false) {
                 return;
@@ -103,16 +103,18 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
           //If no character types are selected (condition stated below) re run the prompt loop for character types
           while (includeUpperCase===false && includeLowerCase===false && includeNumbers===false && includeSpecialCharacters===false && confirmContinue === true)
 
+      //Generate Random Password Based On User Selected Criteria
 
-        //Define additional variables to be defined
+        //Define Reference Arrays For Random PW Generatoin
+        //var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        //var lowerCaseArray =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        //var numberArray = [0,1,2,3,4,5,6,7,8,9]
+        //var specialCharacterArray = ["!","@","#","$","%","^","&","*"] // Review if this is the proper array of special characters
+
+        //Define variables to be defined based on Reference Arrays and User Criteria
         //var unscrambledCharacters;
         //var userRandomPassword; 
 
-        //Define additional variables to be referenced
-        //var upperCaseArray = ["A,B,C,D,EF,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,W,Y,Z,"] // Review if this is the right way to list an array or if each is in quotes?
-        //var lowerCaseArray =  ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"]
-        //var numberArray = [0,1,2,3,4,5,6,7,8,9]
-        //var specialCharacterArray = ["!,@,#,$,%,^,&,*"] // Review if this is all the special characters or not
 
         //Figure out logic to loop through array types to pick characters via array index UNLESS a value is false...(randomize whihc array type they choose from so its not the same cycle?)
 
