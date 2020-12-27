@@ -77,6 +77,7 @@
               var confirmContinue = confirm ("You did not choose at least one character type to use in your password. \n\nClick OK to try again, or cancel if you want to stop the password generation process")
               console.log("confirmContinue = " + confirmContinue);
               if (confirmContinue === false) {
+                alert("You have cancelled the operation");
                 return;
               }
             }
