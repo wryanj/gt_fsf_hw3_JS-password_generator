@@ -1,24 +1,7 @@
-/*STARTING CODE FOR ASSIGNMENT
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");- Why do you make a variable here instead of just using the document.getelemenetbyit???
-
---------------------------------------------------------------
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;-- Not clear where to use this yet
-}
---------------------------------------------------------------
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);- How do I use this in here versus adding an onclick attribute in the HTML file?
-
---------------------------------------------------------------------------------------------------------------------*/
 
 //My Logic Script
 
-  //writePassword Function To Be Initiated on Call Via Onclick Attribute in HTML Button "Generate Password"
+  //GenerateRandomPassword Function To Be Initiated on Call Via Onclick Attribute in HTML Button "Generate Password"
     function generateRandomPassword() {
 
       //Define (and validate) user password criteria via prompts and Confirmations
@@ -96,7 +79,6 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
               if (confirmContinue === false) {
                 return;
               }
-              
             }
           } 
 
@@ -105,30 +87,59 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
       //Generate Random Password Based On User Selected Criteria
 
-        //Define Reference Arrays For Random PW Generatoin
-        var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        var lowerCaseArray =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-        var numberArray = [0,1,2,3,4,5,6,7,8,9];
-        var specialCharacterArray = ["!","@","#","$","%","^","&","*"]; // Review if this is the proper array of special characters
+        //Define Reference Arrays For Random PW Generation
+        var upperCaseReference = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        var lowerCaseReference =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var numberReference = [0,1,2,3,4,5,6,7,8,9];
+        var specialCharacterReference = ["!","@","#","$","%","^","&","*"]; // Review if this is the proper array of special characters
 
         //Define variables to be defined based on Reference Arrays and User Criteria
+        var upperCaseCharacters;
+        var lowerCaseCharacters;
+        var numberCharacters;
+        var specialCharacters;
         var unscrambledCharacters;
         var userRandomPassword; 
 
-        //For all arrays until i is equal to the pw length, Loop Through and Index an Array Value...
-          //If includeUpperCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the upperCaseArray
-          //If includeLowerCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the lowerCaseArray
-          //If includeNumbers is true, index a random value 0-9 (for 10 numbers including 0) from the numbersArray
-          //If includeSpecialCharacters is true, index a random value 0-7 (for 8 special characters) from the specialCharactersArray
+        //For all arrays until i is equal to the pw length, Loop Through and Index values from the reference arrays based on user input
+        for (i=0; i<passwordLength; i++) {
 
-        //Join the indexed array values above as a single string as var unscrambledCharacters
+          //If includeUpperCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the upperCaseReference to create new array upperCaseCharacters
+          if (includeUpperCase === true) {
+            var upperCaseCharacters = upperCaseReference[Math.floor(Math.random()*26)];
+          }
+
+          //If includeLowerCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the lowerCaseReference to create new array lowerCaseCharacters
+          if (includeLowerCase === true) {
+            var lowerCaseCharacters = lowerCaseReference[Math.floor(Math.random()*26)];
+          }
+
+          //If includeNumbers is true, index a random value 0-9 (for 10 numbers including 0) from the numbersReference to create new array numbersCharacters
+          if (includeNumbers === true) {
+            var numberCharacters = numberReference[Math.floor(Math.random()*10)];
+          }
+          
+          //If includeSpecialCharacters is true, index a random value 0-7 (for 8 special characters) from the specialCharactersArray
+          if (includeSpecialCharacters === true) {
+            var specialCharacters = specialCharacterReference[Math.floor(Math.random()*8)];
+          }
+        }         
+           
+            console.log("upper case characters = " + upperCaseCharacters);
+            console.log("lower case characters = " + lowerCaseCharacters);
+            console.log("number characters = " + numberCharacters);
+            console.log("special characters = " + specialCharacters);
+
+
+        //Join the new arrays created in the for loop into a single array unscrambledCharacters
+        unscrambledCharacters = upperCaseCharacters.concat(lowerCaseCharacters,numberCharacters,specialCharacters);
+          console.log("unscrambled characters = " + unscrambledCharacters);
 
         //Scramble the order of the characters to create final password var userRandomPassword as var userRandomPassword
 
-        //Display the result of userRandomPassword by changing innerhtml of card body text area element of html file
+      //Display the result of userRandomPassword by changing innerhtml of card body text area element of html file
 
-      //}  
-   }     
+    }     
 
      
 
