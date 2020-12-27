@@ -25,9 +25,7 @@ I also did an initial flow diagram to get an idea of how it should work for a cu
 
 ![image](https://user-images.githubusercontent.com/72420733/103179879-49f74680-485e-11eb-9c8d-a8ac9d36faf2.png)
 
-I split it into main sections of code, where I carried out some essential steps (get the user inputs and validate them, organize them into variables, then generate a password based on their inputs)
-
-I used the user arrays to create a password array that I would then shuffle (using teh fisher-yates algorythm) and join into a single string with no spaces. 
+Once inputs were collected, I created some arrays based on user criteria that I then would then shuffle (using thh fisher-yates algorythm) and join into a single string with no spaces. 
 
 ![image](https://user-images.githubusercontent.com/72420733/103179893-6bf0c900-485e-11eb-929b-3cfe055b6107.png)
 
