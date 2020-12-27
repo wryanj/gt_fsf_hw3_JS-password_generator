@@ -9,7 +9,7 @@ Random Password Generator Based on User Entered Criteria
 4.  [Credits](#Credits)
 
 ## Deployed Applicatoin
-[ENTER]
+[https://wryanj.github.io/gt_fsf_hw3_JS_password_generator/]
 
 ## Motivation
 I did this to learn more about javascript, and the various ways to write logic, loops, variables, arrays and manipulate other elements of an HTML file.
