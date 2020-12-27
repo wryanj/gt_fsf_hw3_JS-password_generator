@@ -34,11 +34,17 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
             //Ask the user to enter their pw lenght and present them with the constraints
             var passwordLength = prompt("How many characters do you want your password to be? (A numerical value between 8-128 must be submitted)");
 
-            //log the numerical value captured for the variable for purpose of testing code
-            console.log("Total number of characters (length) user wants in their password = " + passwordLength);
+              //log the numerical value captured for the variable for purpose of testing code
+              console.log("Total number of characters (length) user wants in their password = " + passwordLength);
+
+            //if the user hits cancel, return the function
+            if (passwordLength === null) {
+              alert("You have canceled the operation")
+              return;
+            }
 
             //if the passowrd criteria is not met, present and error message. 
-            if (passwordLength < 8 || passwordLength > 123) {
+            else if (passwordLength < 8 || passwordLength > 123) {
             alert("ERROR: You have not met the required entry criteria.\n\nHit ok to try again, and please follow the required entry criteria.");
             }
       
@@ -51,6 +57,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
           //If the prompted entry is valid, continue to next code. If its not (e.x if the condition in while is present) loop through the code again until a valid answer is provided
           while (passwordLength < 8 || passwordLength > 123);
 
+
         // Get and Validate What Character Types Shold be Included
         
           //Variable to Be Defined
@@ -61,10 +68,10 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
           //Run the code block at least once to prompt for variable, and validate if it meets criteria
           do{
-            //Notify the user what they must include in their password
+            //Notify the user of the minimum number of character types they must confirm in their random password
             alert("You will be asked to confirm which character types you wish to include in your password.\n\nYou must choose to include at least one character type!")
 
-            //Ask the user if they want to include certain character types in their password
+            //Ask the user to confirm which character types they would like to use in their random password
             var includeUpperCase = confirm("Do you want to include upper case characters in your password?");
               console.log("Include Upper Case Characters? = " + includeUpperCase);
 
@@ -90,7 +97,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
           //If no character types are selected (condition stated below) re run the prompt loop for character types
           while (includeUpperCase===false && includeLowerCase===false && includeNumbers===false && includeSpecialCharacters===false)
 
-    
+
         //Define additional variables to be defined
         //var unscrambledCharacters;
         //var userRandomPassword; 
@@ -99,7 +106,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
         //var upperCaseArray = ["A,B,C,D,EF,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,W,Y,Z,"] // Review if this is the right way to list an array or if each is in quotes?
         //var lowerCaseArray =  ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"]
         //var numberArray = [0,1,2,3,4,5,6,7,8,9]
-        //var specialCharacterArray = ["!,@,#,$,%,^,&,*"]
+        //var specialCharacterArray = ["!,@,#,$,%,^,&,*"] // Review if this is all the special characters or not
 
         //Figure out logic to loop through array types to pick characters via array index UNLESS a value is false...(randomize whihc array type they choose from so its not the same cycle?)
 
@@ -107,7 +114,7 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
 
         //Scramble the order of the characters to create final password var userRandomPassword....
 
-        //Display the Password to the User
+        //Display the result of userRandomPassword by changing innerhtml of card body text area element of html file
 
       //}  
    }     
