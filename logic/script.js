@@ -106,21 +106,24 @@ generateBtn.addEventListener("click", writePassword);- How do I use this in here
       //Generate Random Password Based On User Selected Criteria
 
         //Define Reference Arrays For Random PW Generatoin
-        //var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-        //var lowerCaseArray =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-        //var numberArray = [0,1,2,3,4,5,6,7,8,9]
-        //var specialCharacterArray = ["!","@","#","$","%","^","&","*"] // Review if this is the proper array of special characters
+        var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        var lowerCaseArray =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var numberArray = [0,1,2,3,4,5,6,7,8,9];
+        var specialCharacterArray = ["!","@","#","$","%","^","&","*"]; // Review if this is the proper array of special characters
 
         //Define variables to be defined based on Reference Arrays and User Criteria
-        //var unscrambledCharacters;
-        //var userRandomPassword; 
+        var unscrambledCharacters;
+        var userRandomPassword; 
 
+        //For all arrays until i is equal to the pw length, Loop Through and Index an Array Value...
+          //If includeUpperCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the upperCaseArray
+          //If includeLowerCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the lowerCaseArray
+          //If includeNumbers is true, index a random value 0-9 (for 10 numbers including 0) from the numbersArray
+          //If includeSpecialCharacters is true, index a random value 0-7 (for 8 special characters) from the specialCharactersArray
 
-        //Figure out logic to loop through array types to pick characters via array index UNLESS a value is false...(randomize whihc array type they choose from so its not the same cycle?)
+        //Join the indexed array values above as a single string as var unscrambledCharacters
 
-        //Join the indexed array values as a single string as var unscrambledCharacters....
-
-        //Scramble the order of the characters to create final password var userRandomPassword....
+        //Scramble the order of the characters to create final password var userRandomPassword as var userRandomPassword
 
         //Display the result of userRandomPassword by changing innerhtml of card body text area element of html file
 
