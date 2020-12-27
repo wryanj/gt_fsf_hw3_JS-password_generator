@@ -174,7 +174,8 @@
       console.log("final shuffled password as single string, to be displayed to the user on screen as a single word with no spaces or commas = " + randomPasswordString);
 
       //Display the result of the shuffled array, joined as a string as the users random password
-
+      document.getElementById("password").innerHTML=randomPasswordString;
+      
     }     
 
      
