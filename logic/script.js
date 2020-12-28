@@ -28,7 +28,7 @@
 
             //if the passowrd criteria is not met, present and error message. 
             else if (passwordLength < 8 || passwordLength > 123) {
-            alert("You have not met the required entry criteria.\n\nHit ok to try again, and please follow the required entry criteria.");
+            alert("You have not met the required entry criteria.\n\nHit 'close' to try again, and please follow the required entry criteria.");
             }
       
             //If criteria is met, alert them of the number they chose and send them to the next prompt for special characters (breaks while loop)
