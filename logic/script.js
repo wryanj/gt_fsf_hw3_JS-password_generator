@@ -15,20 +15,20 @@
           do{
 
             //Ask the user to enter their pw lenght and present them with the constraints
-            var passwordLength = prompt("How many characters do you want your password to be? (A numerical value between 8-128 must be submitted)");
+            var passwordLength = prompt("How many characters do you want your password to be?\n\nA numerical value between 8-128 must be submitted.");
 
               //log the numerical value captured for the variable for purpose of testing code
               console.log("Total number of characters (length) user wants in their password = " + passwordLength);
 
             //if the user hits cancel, return the function
             if (passwordLength === null) {
-              alert("You have canceled the operation")
+              alert("You have canceled the operation. Click the generate passwor button to try again.")
               return;
             }
 
             //if the passowrd criteria is not met, present and error message. 
             else if (passwordLength < 8 || passwordLength > 123) {
-            alert("ERROR: You have not met the required entry criteria.\n\nHit ok to try again, and please follow the required entry criteria.");
+            alert("You have not met the required entry criteria.\n\nHit ok to try again, and please follow the required entry criteria.");
             }
       
             //If criteria is met, alert them of the number they chose and send them to the next prompt for special characters (breaks while loop)
@@ -52,7 +52,7 @@
           //Run the code block at least once to prompt for variable, and validate if it meets criteria
           do{
             //Notify the user of the minimum number of character types they must confirm in their random password
-            alert("You will be asked to confirm which character types you wish to include in your password.\n\nYou must choose to include at least one character type!")
+            alert("You will be asked to confirm which character types you wish to include in your password.\n\nWhen prompted, choose 'ok' if you wish to include the character type or 'cancel' if you do not. \n\nYou must choose to include at least one character type.")
 
             //Ask the user to confirm which character types they would like to use in their random password
             var includeUpperCase = confirm("Do you want to include upper case characters in your password?");
@@ -74,10 +74,10 @@
 
             //if they dont choose at least one true value, ask them if they want ot try again. If not, return them to start
             else if ((includeUpperCase===false) && (includeLowerCase===false) && (includeNumbers===false) && (includeSpecialCharacters===false)){
-              var confirmContinue = confirm ("You did not choose at least one character type to use in your password. \n\nClick OK to try again, or cancel if you want to stop the password generation process")
+              var confirmContinue = confirm ("You did not choose at least one character type to use in your password. \n\nClick OK to try again, or cancel if you want to stop the password generation process.")
               console.log("confirmContinue = " + confirmContinue);
               if (confirmContinue === false) {
-                alert("You have cancelled the operation");
+                alert("You have cancelled the operation.\n\n Click the generate password button to try again.");
                 return;
               }
             }
