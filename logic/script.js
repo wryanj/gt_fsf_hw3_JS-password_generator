@@ -28,7 +28,7 @@
 
             //if the passowrd criteria is not met, present and error message. 
             else if (passwordLength < 8 || passwordLength > 123) {
-            alert("You have not met the required entry criteria.\n\nHit 'close' to try again, and please follow the required entry criteria.");
+            alert("You have not met the required entry criteria.\n\nHit 'ok' to try again, and please follow the required entry criteria.");
             }
       
             //If criteria is met, alert them of the number they chose and send them to the next prompt for special characters (breaks while loop)
@@ -88,13 +88,13 @@
 
       //Generate Random Password Based On User Selected Criteria
 
-        //Define Reference Arrays For Random PW Generation
+        //Reference Arrays For Random PW Generation
         var upperCaseReference = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         var lowerCaseReference =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
         var numberReference = [0,1,2,3,4,5,6,7,8,9];
-        var specialCharacterReference = ["!","@","#","$","%","^","&","*"]; // Review if this is the proper array of special characters
+        var specialCharacterReference = ["!","@","#","$","%","^","&","*"];
 
-        //Define variables to be defined based on Reference Arrays and User Criteria
+        //Variables to be defined based on Reference Arrays and User Criteria
         var upperCaseCharacters;
         var lowerCaseCharacters;
         var numberCharacters;
@@ -102,12 +102,12 @@
         var randomPasswordArray=[];
         var randomPasswordString;
 
-        //For all arrays until i is equal to the pw length, Loop Through and Index values from the ref arrays and add them to the unscrambled characters array
+        //For all relevant arrays until i is equal to the pw length, Loop Through and Index values from the appropriate ref arrays and add them to the character type arrays to be joined into a string
         console.log("password lengh = " + passwordLength)
 
         for (i=0; i<passwordLength;) {
 
-          //If includeUpperCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the upperCaseReference to create new array upperCaseCharacters
+          //If includeUpperCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the upperCaseReference to create new variable, then add (push) to randomPassword Array array and increase i by 1
           if (includeUpperCase === true && i<passwordLength) {
             var upperCaseCharacters = upperCaseReference[Math.floor(Math.random()*26)];
             randomPasswordArray.push(upperCaseCharacters);
@@ -115,7 +115,7 @@
             console.log("iteration count for the for loop = " + i);
           }
 
-          //If includeLowerCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the lowerCaseReference to create new array lowerCaseCharacters
+          //If includeLowerCase is true, index a random value 0-25 (for 26 letters in alphabet array) from the lowerCaseReference to create new variable, then add (push) to randomPassword Array array and increase i by 1
           if (includeLowerCase === true && i<passwordLength) {
             var lowerCaseCharacters = lowerCaseReference[Math.floor(Math.random()*26)];
             randomPasswordArray.push(lowerCaseCharacters);
@@ -123,7 +123,7 @@
             console.log("iteration count for the for loop = " + i);
           }
 
-          //If includeNumbers is true, index a random value 0-9 (for 10 numbers including 0) from the numbersReference to create new array numbersCharacters
+          //If includeNumbers is true, index a random value 0-9 (for 10 numbers including 0) from the numbersReference to create new variable, then add (push) to randomPassword Array array and increase i by 1
           if (includeNumbers === true && i<passwordLength) {
             var numberCharacters = numberReference[Math.floor(Math.random()*10)];
             randomPasswordArray.push(numberCharacters);
@@ -131,7 +131,7 @@
             console.log("iteration count for the for loop = " + i);
           }
           
-          //If includeSpecialCharacters is true, index a random value 0-7 (for 8 special characters) from the specialCharactersArray
+          //If includeSpecialCharacters is true, index a random value 0-7 (for 8 special characters) from the specialCharactersArray to create a new variable, then add (push) to randomPassword Array array and increase i by 1
           if (includeSpecialCharacters === true && i<passwordLength) {
             var specialCharacters = specialCharacterReference[Math.floor(Math.random()*8)];
             randomPasswordArray.push(specialCharacters);
@@ -141,7 +141,7 @@
         }         
 
 
-        //Check the value of unscrambled chracters pushed to the array from the foor loop
+        //Check the value of the randomPassword Array to ensure characters were pushed as defined in the for loop above
         console.log("random password array (prior to shuffling) = " + randomPasswordArray);
 
         //Shuffle the randomPassword array using the fischer-yates random algorythm (code taken from fisher-yates Shuffle and applied to my randomPassord array)
@@ -166,11 +166,11 @@
             return array;
           }
         
-          // Utilize Fisher-Yates Function to Shuffle my Random Password & Check Value
+          // Utilize Fisher-Yates Function to Shuffle my Random Password & Check Value of shuffled random password array
           shuffle(randomPasswordArray);
           console.log("random password Array (after scramble via fisher-yates) = " + randomPasswordArray);
 
-      //Join the shuffled array into a single string 
+      //Join the shuffled array into a single string to create a new variable, random password sting (this is the user pw to be shown to them)
       var randomPasswordString = randomPasswordArray.join('');
       console.log("final shuffled password as single string, to be displayed to the user on screen as a single word with no spaces or commas = " + randomPasswordString);
 
